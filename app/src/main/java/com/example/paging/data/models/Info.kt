@@ -1,8 +1,11 @@
 package com.example.paging.data.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Info(
     @SerializedName("count")
     val count: Int? = null,
@@ -11,5 +14,5 @@ data class Info(
     @SerializedName("next")
     val next: String? = null,
     @SerializedName("prev")
-    val prev: Any? = null
-)
+    val prev: String? = null
+):Parcelable

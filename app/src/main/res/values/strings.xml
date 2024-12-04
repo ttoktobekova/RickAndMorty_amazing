@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Paging</string>
-    <string name="name">Name:</string>
+    <string name="name">Name</string>
     <string name="name_meaning">Name meaning</string>
-    <string name="status">Status:</string>
+    <string name="status">Status</string>
     <string name="character">Character</string>
+    <string name="alive_animal">Alive-Animal</string>
+    <string name="location">Last knows ocation:</string>
+    <string name="eath">Earth</string>
+    <string name="first_seen_in">First seen in:</string>
+    <string name="edge_of_tomorty_rick">Edge of Tomorty:Rick</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.paging.data
+package com.example.paging.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
 import com.example.paging.data.models.Character
 import com.example.paging.databinding.ItemCharacterBinding
+import com.example.paging.utils.OnClick
 
 
-class CharacterAdapter :
+class CharacterAdapter(private val onClick: OnClick) :
     PagingDataAdapter<Character, CharacterAdapter.CharacterViewHolder>(DiffUtilCallBack()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         return CharacterViewHolder(
@@ -26,6 +27,12 @@ class CharacterAdapter :
         if (character != null) {
             holder.bind(character)
         }
+        holder.itemView.setOnClickListener {
+            if (character != null) {
+                onClick.onClick(character)
+            }
+
+        }
 
     }
 
@@ -33,8 +40,8 @@ class CharacterAdapter :
         ViewHolder(binding.root) {
         fun bind(character: Character) = with(binding) {
             imgCharacter.load(character.image)
-            tvName.text = character.name
-            tvStatus.text = character.status
+            tvName.text = "${character.name}  №${character.id}"
+
         }
 
     }

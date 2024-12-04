@@ -1,8 +1,11 @@
 package com.example.paging.data.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Character(
     @SerializedName("id")
     val id: Int? = null,
@@ -28,4 +31,4 @@ data class Character(
     val url: String? = null,
     @SerializedName("created")
     val created: String? = null
-)
+):Parcelable
